@@ -1,7 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Proyects = () => {
-	return <h1>Project</h1>;
+	return (
+		<motion.h1
+			initial={{ y: 500 }}
+			animate={{ y: 0, transition: { duration: 0.5, type: 'spring' } }}
+			exit={{
+				y: -500,
+				transition: { duration: 0.5, type: 'spring' },
+			}}
+		>
+			Projects
+		</motion.h1>
+	);
 };
 
 export default Proyects;

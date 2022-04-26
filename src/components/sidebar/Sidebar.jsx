@@ -248,7 +248,7 @@ const Sidebar = () => {
 					<img src={Me} alt="profile" onClick={handleClickProfile} />
 					<Detail click={clickProfile}>
 						<Name click={clickProfile}>
-							<h4>Jhon Doe</h4>
+							<h4>Tomas Dnl</h4>
 							<a href="/#">view profile</a>
 						</Name>
 						<Logout>
