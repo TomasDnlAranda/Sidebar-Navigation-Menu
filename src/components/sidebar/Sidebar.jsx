@@ -8,6 +8,8 @@ import Document from '../../assets/svg/draft.svg';
 import PowerOff from '../../assets/svg/power-off-solid.svg';
 import Me from '../../assets/images/me.png';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+
 const Button = styled.button`
 	background-color: ${(props) => props.theme.dark};
 	border: none;
@@ -21,7 +23,9 @@ const Button = styled.button`
 	justify-content: center;
 	align-items: center;
 
-	position: relative;
+	position: absolute;
+	top: 0.5rem;
+	left: 0;
 
 	&::before {
 		content: '';
@@ -53,6 +57,9 @@ const SidebarContainer = styled.div`
 	margin-top: 1rem;
 	border-radius: 0 30px 30px 0;
 	padding: 1rem 0;
+	position: absolute;
+	top: 3.5rem;
+	left: 0;
 
 	display: flex;
 	flex-direction: column;
@@ -79,7 +86,7 @@ const SlickBar = styled.ul`
 	padding: 2rem 0;
 
 	position: absolute;
-	top: 8rem;
+	top: 6rem;
 	left: 0;
 
 	width: ${(props) => (props.click ? '12rem' : '3.5rem')};
@@ -87,12 +94,14 @@ const SlickBar = styled.ul`
 	border-radius: 0 30px 30px 0;
 `;
 
-const Item = styled.li`
+const Item = styled(NavLink)`
 	width: 100%;
 	padding: 1rem 0;
 
 	display: flex;
 	padding-left: 1rem;
+	text-decoration: none;
+	color: ${(props) => props.theme.light};
 
 	&:hover {
 		border-right: 4px solid ${(props) => props.theme.light};
@@ -127,7 +136,7 @@ const Profile = styled.div`
 	align-items: center;
 	justify-content: center;
 	background-color: ${(props) => props.theme.dark};
-	margin-left: ${(props) => (props.click ? '9rem' : '0')};
+	margin-left: ${(props) => (props.click ? '8rem' : '0')};
 	transition: all 0.3s ease;
 
 	img {
@@ -211,25 +220,25 @@ const Sidebar = () => {
 					<img src={Logo} alt="logo" />
 				</LogoContainer>
 				<SlickBar click={click}>
-					<Item>
+					<Item to="/home">
 						<img src={Home} alt="home" />
 						<Text click={click} className="hola">
 							Home
 						</Text>
 					</Item>
-					<Item>
+					<Item to="/team">
 						<img src={Team} alt="team" />
 						<Text click={click}>Team</Text>
 					</Item>
-					<Item>
+					<Item to="/calender">
 						<img src={Calender} alt="calender" />
 						<Text click={click}>Calender</Text>
 					</Item>
-					<Item>
+					<Item to="/proyects">
 						<img src={Proyects} alt="proyects" />
 						<Text click={click}>Proyects</Text>
 					</Item>
-					<Item>
+					<Item to="/document">
 						<img src={Document} alt="document" />
 						<Text click={click}>Document</Text>
 					</Item>
