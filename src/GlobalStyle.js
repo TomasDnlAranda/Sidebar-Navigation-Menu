@@ -20,4 +20,8 @@ body {
 img {
     width: 25px;
 }
+
+.active {
+		border-right: 4px solid #fff;
+}
 `;
