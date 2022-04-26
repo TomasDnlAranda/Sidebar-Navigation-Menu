@@ -8,20 +8,23 @@ import Calender from './Pages/Calender';
 import Document from './Pages/Document';
 import Projects from './Pages/Proyects';
 import Team from './Pages/Team';
+import { AnimatePresence } from 'framer-motion';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<App />}>
-					<Route index path="/home" element={<Home />} />
-					<Route index path="/calender" element={<Calender />} />
-					<Route index path="/document" element={<Document />} />
-					<Route index path="/proyects" element={<Projects />} />
-					<Route index path="/team" element={<Team />} />
-				</Route>
-			</Routes>
+			<AnimatePresence exitBeforeEnter>
+				<Routes>
+					<Route path="/" element={<App />}>
+						<Route index path="/home" element={<Home />} />
+						<Route path="/calender" element={<Calender />} />
+						<Route path="/document" element={<Document />} />
+						<Route path="/proyects" element={<Projects />} />
+						<Route path="/team" element={<Team />} />
+					</Route>
+				</Routes>
+			</AnimatePresence>
 		</BrowserRouter>
 		<GlobalStyle />
 	</React.StrictMode>

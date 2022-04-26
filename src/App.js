@@ -12,7 +12,7 @@ const ContainerPages = styled.div`
 	align-items: center;
 
 	h1 {
-		size: calc(2rem + 2vw);
+		font-size: calc(2rem + 2vw);
 		background: linear-gradient(to right, #803bec 30%, #1b1b1b 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
